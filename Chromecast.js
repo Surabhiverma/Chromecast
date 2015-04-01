@@ -1,5 +1,5 @@
 
-var sessin = null;
+var session = null;
 function readyApp()
 {
 if (!chrome.cast || !chrome.cast.isAvailable) 
