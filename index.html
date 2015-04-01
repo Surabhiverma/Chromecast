@@ -4,6 +4,18 @@
  </script>
  <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"> 
  </script>
+ <script>
+function readyApp()
+{
+if (!chrome.cast || !chrome.cast.isAvailable) 
+{
+  
+	console.log('Initialization delay...');
+	setTimeout(initializeCastApi, CAST_API_INITIALIZATION_DELAY);
+
+}
+}
+ </script>
 <title>Chromecast</title>
 </head>
 <body onload = "readyApp()">
