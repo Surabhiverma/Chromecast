@@ -105,7 +105,7 @@ console.log('Failed to load image.');
 
 function stopApp() 
 {
-if(session.media.length != 0)
+if(session != null)
 {
 session.stop(onStopAppSuccess, onStopAppError);
 }
