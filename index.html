@@ -5,7 +5,8 @@
  <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"> 
  </script>
  <script>
-var sessin = null;
+var session = null;
+var CAST_API_INITIALIZATION_DELAY = 1000;
 function readyApp()
 {
 if (!chrome.cast || !chrome.cast.isAvailable) 
