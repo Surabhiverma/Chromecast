@@ -1,6 +1,6 @@
 <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"> 
 var sessin = null;
-function ready()
+function readyApp()
 {
 if (!chrome.cast || !chrome.cast.isAvailable) 
 {
