@@ -4,10 +4,8 @@ function readyApp()
 {
 if (!chrome.cast || !chrome.cast.isAvailable) 
 {
-  
-	console.log('Initialization delay...');
-	setTimeout(initializeCastApi, 1000);
-
+console.log('Initialization delay...');
+setTimeout(initializeCastApi, 1000);
 }
 }
 
