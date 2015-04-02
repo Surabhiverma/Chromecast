@@ -86,7 +86,7 @@ if (!session)
 console.log("No session.");
 return;
 }
-var mediaInfo = new chrome.cast.media.MediaInfo('http://commondatastorage.googleapis.com/gtv-videos-bucket/ED_1280.mp4');
+var mediaInfo = new chrome.cast.media.MediaInfo('https://github.com/Surabhiverma/Chromecast/blob/gh-pages/OneRepublic%20-%20Counting%20Stars_2.mp4');
 mediaInfo.contentType = 'video/mp4';
 var request = new chrome.cast.media.LoadRequest(mediaInfo);
 request.autoplay = true;
