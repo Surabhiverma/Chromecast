@@ -28,6 +28,10 @@ chrome.cast.initialize(apiConfig, onInitSuccess, onInitError);
 
 }
 
+function onError(e) 
+{
+console.log('Error' + e);
+}
 
 function sessionListener(e) 
 {
