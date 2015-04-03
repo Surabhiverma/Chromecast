@@ -141,22 +141,44 @@ setTimeout(function(){progressFlag = 1},1500);
 
 function playMedia() 
 {
-if( !currentMediaSession ) 
+if (!currentMediaSession) 
 {
- return;
+return;
 }
-var playpause = document.getElementById("playpause");
-if( playpause.innerHTML == 'Play' ) 
+var playpauseresume = document.getElementById('playpauseresume');
+if (playpauseresume.innerHTML == 'Play') 
 {
-currentMediaSession.play(null, mediaCommandSuccessCallback.bind(this,"playing started for " + currentMediaSession.sessionId),onLoadError);                        
-playpause.innerHTML = 'Pause';
+currentMediaSession.play(null,
+mediaCommandSuccessCallback.bind(this, 'playing started for ' +
+currentMediaSession.sessionId),onError);
+playpauseresume.innerHTML = 'Pause';
+appendMessage('play started');
+timer = setInterval(updateCurrentTime.bind(this),
+PROGRESS_BAR_UPDATE_DELAY);
 }
-else
+else 
 {
-if( playpause.innerHTML == 'Pause' ) 
+if (playpauseresume.innerHTML == 'Pause') 
 {
-currentMediaSession.pause(null, mediaCommandSuccessCallback.bind(this,"paused " +currentMediaSession.sessionId),onLoadError);
-playpause.innerHTML = 'Play';
+currentMediaSession.pause(null,
+mediaCommandSuccessCallback.bind(this, 'paused ' +
+ currentMediaSession.sessionId),
+onError);
+playpauseresume.innerHTML = 'Resume';
+appendMessage('paused');
+}
+    
+else 
+{
+if (playpauseresume.innerHTML == 'Resume') 
+{
+currentMediaSession.play(null,mediaCommandSuccessCallback.bind(this, 'resumed ' +
+currentMediaSession.sessionId),
+onError);
+playpauseresume.innerHTML = 'Pause';
+appendMessage('resumed');
+timer = setInterval(updateCurrentTime.bind(this),PROGRESS_BAR_UPDATE_DELAY);
+}
 }
 }
 }
