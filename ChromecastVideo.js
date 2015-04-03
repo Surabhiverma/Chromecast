@@ -92,7 +92,7 @@ session = null;
 function onMediaDiscovered(how, media) 
 {
 console.log("New media session ID:" + media.mediaSessionId + ' (' + how + ')');
-currentMediaSession = mediaSession;
+currentMediaSession = mediaSessionId;
 document.getElementById("playpause").innerHTML = 'Pause';
 media.addUpdateListener(onMediaStatusUpdate);
 mediaCurrentTime = currentMediaSession.currentTime;
