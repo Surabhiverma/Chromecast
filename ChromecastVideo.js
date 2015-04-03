@@ -102,7 +102,7 @@ function onMediaStatusUpdate(isAlive)
 {
 if( progressFlag ) 
 {
-document.getElementById("progress").value = parseInt(100 *currentMediaSession.currentTime /currentMediaSession.media.duration);
+document.getElementById("progress").value = parseInt(100 *currentMediaSession.currentTime/currentMediaSession.media.duration);
 }
 }
 
@@ -110,7 +110,7 @@ function seekMedia(pos)
 {
 progressFlag = 0;
 var request = new chrome.cast.media.SeekRequest();
-request.currentTime = pos * currentMediaSession.media.duration /100;
+request.currentTime = pos * currentMediaSession.media.duration/100;
 currentMediaSession.seek(request, onSeekSuccess.bind(this, 'media seek done'), onLoadError);
 }
 
