@@ -100,10 +100,29 @@ mediaCurrentTime = currentMediaSession.currentTime;
 
 function onMediaStatusUpdate(isAlive) 
 {
-if( progressFlag ) 
+if (!isAlive) 
 {
-document.getElementById("progress").value = parseInt(100 *currentMediaSession.currentTime/currentMediaSession.media.duration);
+currentMediaTime = 0;
 }
+else 
+{
+if (currentMediaSession.playerState == 'PLAYING') 
+{
+if (progressFlag) 
+{
+document.getElementById('progress').value = parseInt(100 *
+currentMediaSession.currentTime /currentMediaSession.media.duration);
+document.getElementById('progress_tick').innerHTML =
+ currentMediaSession.currentTime;
+document.getElementById('duration').innerHTML =
+  currentMediaSession.media.duration;
+progressFlag = 0;
+}
+document.getElementById('playpauseresume').innerHTML = 'Pause';
+}
+}
+document.getElementById('playerstate').innerHTML =
+      currentMediaSession.playerState;
 }
 
 function seekMedia(pos) 
