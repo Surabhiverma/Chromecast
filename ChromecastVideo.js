@@ -142,6 +142,11 @@ playpause.innerHTML = 'Play';
 }
 }
 
+function mediaCommandSuccessCallback()
+{
+console.log('Played/Paused');    
+}
+
 function changeImage()
 {
 loadMedia();
