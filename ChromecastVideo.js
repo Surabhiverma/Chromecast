@@ -11,6 +11,14 @@ setTimeout(initializeCastApi, 1000);
 }
 }
 
+function pause()
+{
+console.log("Paused");
+}
+function play()
+{
+console.log("Play");
+}
 function initializeCastApi() 
 {
     
