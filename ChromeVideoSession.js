@@ -109,7 +109,7 @@ onMediaDiscovered('onRequestSession', session.media[0]);
 }
 session.addMediaListener(onMediaDiscovered.bind(this, 'addMediaListener'));
 }
-}
+
 
 function onLaunchError() 
 {
