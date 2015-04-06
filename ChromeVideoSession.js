@@ -259,19 +259,6 @@ timer = setInterval(updateCurrentTime.bind(this),PROGRESS_BAR_UPDATE_DELAY);
 }
 }
 
-function stopMedia() 
-{
-if (!currentMediaSession)
-return;
-currentMediaSession.stop(null, mediaCommandSuccessCallback.bind(this, 'stopped ' + currentMediaSession.sessionId), onError);
-var playpauseresume = document.getElementById('playpauseresume');
-playpauseresume.innerHTML = 'Play';
-if (timer) 
-{
-clearInterval(timer);
-}
-}
-
 function setReceiverVolume(level, mute) 
 {
 if (!session)
