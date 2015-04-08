@@ -51,13 +51,6 @@ div {
 <button id="playpauseresume" onclick="playMedia()" class="btn btn-primary btn-md">Play</button>
 <button id="muteunmute" onclick="muteMedia();" class="btn btn-primary btn-md">Mute media</button>
 <button id="getstatus" onclick="getMediaStatus();" class="btn btn-primary btn-md">Get media status</button><br> <br>
-<div style="margin-top:60px; float:left; width:15%; display:block;">
-<input class="vertical" type="range" min="0" max="100" step="1" onmouseup="setReceiverVolume(1-this.value/100,false);">
-</div>
-Progress : <input id="progress" type="range" min="1" max="100" value="1" step="1" onmouseup="seekMedia(this.value);">
-<span id="duration"></span>
-<div id="progress_tick"></div><br>
-State : <span id="playerstate">IDLE</span>
 </div>
 </center>
 </body>
