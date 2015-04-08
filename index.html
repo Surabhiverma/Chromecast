@@ -44,12 +44,13 @@ div {
 <button id="muteunmute" onclick="muteMedia();" class="btn btn-primary btn-md">Mute media</button>
 <button id="getstatus" onclick="getMediaStatus();" class="btn btn-primary btn-md">Get media status</button><br> <br>
 Volume : <input class="vertical" type="range" min="0" max="100" step="1" onmouseup="setReceiverVolume(1-this.value/100,false);">
+<div class="row">
 <div class="col-sm-2"></div>
 <div class="col-sm-8">
 Progress : <input id="progress" type="range" min="1" max="100" value="1" step="1" onmouseup="seekMedia(this.value);">
 </div>
 <div class="col-sm-2"></div>
-<br>
+</div>
 <span id="duration"></span>
 <div id="progress_tick"></div>
 
